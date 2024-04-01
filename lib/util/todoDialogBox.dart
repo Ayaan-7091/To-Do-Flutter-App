@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable, prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
 
 import 'myButton.dart';
@@ -19,7 +21,7 @@ TodoDialogBox({super.key,
   Widget build(BuildContext context) {
     return AlertDialog(
 backgroundColor: Colors.yellow[600],
-      content: Container(
+      content: SizedBox(
         height: 150,
       width: 300,
 
@@ -29,7 +31,7 @@ backgroundColor: Colors.yellow[600],
           //to take user input
           TextField(
             controller: controller,
-          decoration: InputDecoration(border: OutlineInputBorder(),
+          decoration: const InputDecoration(border: OutlineInputBorder(),
           hintText: "Add a new Task",fillColor: Colors.white,hoverColor: Colors.white),
 
           ),

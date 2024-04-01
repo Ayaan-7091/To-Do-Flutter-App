@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
@@ -15,8 +17,8 @@ class MyButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialButton(
       onPressed: onPressed,
-      child: Text(buttonText),
       color: color,
+      child: Text(buttonText),
 
     );
   }
