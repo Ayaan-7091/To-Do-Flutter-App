@@ -14,6 +14,7 @@ void createInitialData(){
     ["Click check on task completion",true],
 
   ];
+  updateDataBase();
 }
   //load data from database
 void loadData(){
