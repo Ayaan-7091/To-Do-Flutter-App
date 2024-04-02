@@ -39,14 +39,14 @@ class TodoTile extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               IconButton(
-                icon: Icon(Icons.check),
+                icon: const Icon(Icons.check),
                 onPressed: () {
                   if (onCompletePressed != null) onCompletePressed!(true);
                 },
                 color: Colors.green,
               ),
               IconButton(
-                icon: Icon(Icons.delete),
+                icon: const Icon(Icons.delete),
                 onPressed: onRemovePressed,
                 color: Colors.red,
               ),
