@@ -92,7 +92,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.yellow[200],
       appBar: AppBar(
-        title: const Text('TO DO'),
+        title: const Text('Task Management'),
         backgroundColor: Colors.yellow[600],
         actions: [
           IconButton(
@@ -105,18 +105,23 @@ class _HomePageState extends State<HomePage> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 300),
         child: db.toDoList.isEmpty
-            ? const Text(
-                'Add your tasks',
-                style: TextStyle(fontSize: 20),
+            ? const Center(
+                child: Text(
+                  'Add your tasks',
+                  style: TextStyle(fontSize: 20),
+                ),
               )
-            : ListView.builder(
-                itemCount: min(1, db.toDoList.length),
+            : ListView.separated(
+                separatorBuilder: (BuildContext context, int index) =>
+                    const SizedBox(height: 10),
+                itemCount: min(3, db.toDoList.length),
                 itemBuilder: (context, index) => TodoTile(
                   title: db.toDoList[index][0],
                   isCompleted: db.toDoList[index][1],
                   onCompletePressed: (bool newValue) =>
                       checkBoxChanged(newValue, index),
                   onRemovePressed: () => deleteFunction(index),
+                  opacity: index == 0 ? 1.0 : 0.2, // Set opacity based on index
                 ),
               ),
       ),

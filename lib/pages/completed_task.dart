@@ -42,8 +42,10 @@ class _CompletedTasksPageState extends State<CompletedTasksPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-        child: ListView.builder(
+        child: ListView.separated(
           itemCount: _completedTasks.length,
+          separatorBuilder: (BuildContext context, int index) =>
+              const SizedBox(height: 10), // Add gap between items
           itemBuilder: (context, index) {
             return OldTodoTile(
               title: _completedTasks[index][0],

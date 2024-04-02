@@ -22,16 +22,16 @@ class OldTodoTile extends StatelessWidget {
           title,
           style: const TextStyle(),
         ),
-        trailing: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            IconButton(
-              icon: const Icon(Icons.delete),
-              onPressed: onRemovePressed,
-              color: Colors.red,
-            ),
-          ],
-        ),
+        // trailing: Row(
+        //   mainAxisSize: MainAxisSize.min,
+        //   children: <Widget>[
+        //     IconButton(
+        //     //   icon: const Icon(Icons.delete),
+        //     //   onPressed: onRemovePressed,
+        //     //   color: Colors.red,
+        //     // ),
+        //   ],
+        // ),
       ),
     );
   }
